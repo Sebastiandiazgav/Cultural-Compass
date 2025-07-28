@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Compass</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- El selector de idioma sigue siendo un componente global -->
+    <div class="language-selector-container">
+        <select id="language-input" aria-label="Select language">
+            <option value="es" selected>Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+            <option value="it">Italiano</option>
+        </select>
+    </div>
+
+    <!-- Contenedor principal que aloja las dos columnas -->
+    <div class="app-container">
+        <!-- Columna Izquierda: Formulario de Entrada -->
+        <div class="column input-column">
+            <h1 data-translate-key="main_title">Cultural Compass 🧭</h1>
+            <p data-translate-key="subtitle">Tu asistente de viajes y cultura personal.</p>
+            
+            <div class="form-container">
+                <input type="text" id="location-input" data-translate-key="location_placeholder" placeholder="¿A qué ciudad o país viajas?">
+                <input type="number" id="days-input" data-translate-key="days_placeholder" placeholder="¿Cuántos días?" min="1">
+                
+                <div class="tastes-container">
+                    <p data-translate-key="interests_title">Selecciona tus intereses principales:</p>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="taste1" name="tastes" value="arte y cultura">
+                        <label for="taste1" data-translate-key="taste_art">🎨 Arte y Cultura</label>
+                        <input type="checkbox" id="taste2" name="tastes" value="comida local y gastronomía">
+                        <label for="taste2" data-translate-key="taste_food">🍲 Gastronomía</label>
+                        <input type="checkbox" id="taste3" name="tastes" value="naturaleza y trekking">
+                        <label for="taste3" data-translate-key="taste_nature">🌳 Naturaleza</label>
+                        <input type="checkbox" id="taste4" name="tastes" value="música en vivo y vida nocturna">
+                        <label for="taste4" data-translate-key="taste_nightlife">🎵 Vida Nocturna</label>
+                        <input type="checkbox" id="taste5" name="tastes" value="historia y arquitectura">
+                        <label for="taste5" data-translate-key="taste_history">🏛️ Historia</label>
+                    </div>
+                </div>
+                
+                <button id="generate-btn" data-translate-key="generate_button">Generar Experiencia</button>
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Resultados (inicialmente oculta) -->
+        <div class="column output-column hidden" id="output-column">
+            <h2 data-translate-key="results_title">Tu Itinerario Personalizado ✨</h2>
+            <div id="itinerary-wrapper">
+                <div id="itinerary"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
