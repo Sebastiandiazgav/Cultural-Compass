@@ -60,8 +60,4 @@
     ```
 6.  Open your browser and go to `http://127.0.0.1:5000`.
 
----
 
-## 🖼️ Interface Preview
-
-*[Insert a screenshot of your working application here]*

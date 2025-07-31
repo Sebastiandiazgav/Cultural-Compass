@@ -1,7 +1,6 @@
 // static/app.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DICCIONARIO DE TRADUCCIONES COMPLETO ---
     const translations = {
         es: {
             main_title: "Cultural Compass 🧭",
@@ -107,10 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- FUNCIÓN PARA TRADUCIR LA PÁGINA ---
     function setLanguage(lang) {
         document.documentElement.lang = lang;
-        const translation = translations[lang] || translations.en; // Usa inglés si no hay traducción
+        const translation = translations[lang] || translations.en;
         document.querySelectorAll('[data-translate-key]').forEach(element => {
             const key = element.getAttribute('data-translate-key');
             if (translation[key]) {
@@ -123,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA DE LA APLICACIÓN ---
     const locationInput = document.getElementById('location-input');
     const daysInput = document.getElementById('days-input');
     const languageInput = document.getElementById('language-input');

@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Evita el scroll en el body */
+    overflow: hidden;
 }
 
 /* Contenedor principal de la aplicación */
@@ -20,7 +20,7 @@ body {
     background: white;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-    overflow: hidden; /* Importante para que el scroll interno funcione */
+    overflow: hidden;
 }
 
 /* Estilos para ambas columnas */
@@ -33,7 +33,7 @@ body {
 }
 
 .input-column {
-    flex: 1.2; /* La columna de entrada es un poco más ancha */
+    flex: 1.2;
     justify-content: center;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .output-column.hidden {
-    display: none; /* Oculta la columna de resultados al inicio */
+    display: none;
 }
 
 /* Contenedor del selector de idioma */
@@ -147,14 +147,14 @@ button#generate-btn:hover {
 /* Contenedor de resultados */
 #output-column h2 {
     margin-bottom: 1.5rem;
-    flex-shrink: 0; /* Evita que el título se encoja */
+    flex-shrink: 0; 
 }
 
 #itinerary-wrapper {
-    overflow-y: auto; /* AÑADE SCROLL si el contenido es muy largo */
-    flex-grow: 1; /* Permite que este contenedor crezca */
+    overflow-y: auto;
+    flex-grow: 1;
     text-align: left;
-    padding-right: 1rem; /* Espacio para la barra de scroll */
+    padding-right: 1rem;
 }
 
 #itinerary {

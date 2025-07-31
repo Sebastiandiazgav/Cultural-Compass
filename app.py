@@ -16,7 +16,6 @@ QLOO_API_KEY = os.getenv("QLOO_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 try:
-    # Asegúrate de que las claves se cargaron correctamente
     if not GOOGLE_API_KEY:
         raise ValueError("La clave de API de Google no fue encontrada en las variables de entorno.")
     genai.configure(api_key=GOOGLE_API_KEY)
@@ -26,7 +25,6 @@ except Exception as e:
 INSIGHTS_URL = "https://hackathon.api.qloo.com/v2/insights"
 
 
-# --- Lógica de la Aplicación (sin cambios) ---
 
 def get_recommendations_from_qloo(location: str):
     if not location or not QLOO_API_KEY:
@@ -82,7 +80,7 @@ def generate_itinerary_with_llm(location, days, tastes, language, qloo_data):
         return "There was an error generating the recommendation with the AI."
 
 
-# --- Rutas del Servidor (sin cambios) ---
+# Rutas del Servidor
 
 @app.route('/')
 def home():
